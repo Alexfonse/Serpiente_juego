@@ -1,0 +1,115 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    animation: fadeIn 1s ease-in-out;
+}
+
+canvas {
+    border: 2px solid black;
+    margin: 20px auto;
+    display: block;
+    animation: bounceIn 0.5s ease-in-out;
+}
+
+#restart {
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s;
+}
+
+#restart:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+#score, #currscore, #lives {
+    font-size: 20px;
+    margin: 10px;
+    animation: slideDown 0.7s ease-out;
+}
+
+#lives {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+.heart {
+    width: 20px;
+    height: 20px;
+    background: red;
+    display: inline-block;
+    margin: 5px;
+    border-radius: 50%;
+    animation: heartbeat 1s infinite;
+}
+
+.lost {
+    background: black; /* Cambia el color a negro al perder vida */
+    animation: none; /* Detener animación */
+}
+
+/* Animación de latido */
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+@keyframes beat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    70% {
+        transform: scale(1.05);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
